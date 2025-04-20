@@ -64,6 +64,10 @@ app.get('/login',(req,res)=>{
     res.render("login");
 });
 
+app.get('/home',(req,res)=>{
+    res.render("home");
+});
+
 // Basic test route for root URL
 app.get('/', (req, res) => {
   res.render('home');
