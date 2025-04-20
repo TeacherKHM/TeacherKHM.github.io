@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Usuarios</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .top-bar {
+      display:flex;
+      position: fixed;
+      top: 85%;
+      left: 90%;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 1rem 2rem;
+    }
+    .top-bar form {
+      display: inline;
+    }
+    .add-button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 2rem;
+    }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 200px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 {
+      margin: 0 0 0.5rem;
+    }
+    .card p {
+      margin: 0.25rem 0;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+    <div class="top-bar">
+        <form action="/register" method="GET">
+          <button type="submit" class="add-button">Agregar Usuario</button>
+        </form>
+      </div>
+  <h1 style="text-align:center;">Usuarios Registrados</h1>
+  <div class="container">
+    <% usuarios.forEach(usuario => { %>
+      <div class="card">
+        <h3><%= usuario.nombre %></h3>
+        <p><strong>Correo:</strong> <%= usuario.correo %></p>
+        <p><strong>ID:</strong> <%= usuario.id %></p>
+        <p><strong>Contraseña: <%=usuario.contrasena%></strong></p>
+        <p><strong>Rol: <%=usuario.rol%></strong></p>
+        <form action="/delete/<%= usuario.id %>" method="POST" style="display:inline;">
+            <button type="submit">Eliminar</button>
+          </form>
+  
+          <form action="/edit/<%= usuario.id %>" method="GET" style="display:inline;">
+            <button type="submit">Editar</button>
+          </form>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

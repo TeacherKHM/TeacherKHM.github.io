@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login/SIgn Up</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+          <img src="https://img.icons8.com/ios-filled/500/student-female.png" alt="Illustration">
+        </div>
+        <div class="right-panel">
+          <h2>GAC Ingreso</h2>
+          <form action="/verify" method="GET" class="login">
+
+          <div class="form-group">
+            <label for="correo"><input type="email" placeholder="Email Address" id="correo" name="correo">
+            </label>
+            </div>
+          
+          <div class="form-group">
+            <label for="contrasena"><input type="password" placeholder="Enter Password" id="contrasena" name="contrasena">
+            </label>
+            </div>
+            
+            <div class="form-group">
+                <button class="btn2">
+                    <a href="#">Forgot password</a>
+                </button>
+            </div>
+
+          <button type="submit" class="btn">Sign in</button>
+
+          <div class="social-login">
+            <button>Google</button>
+            <button>Facebook</button>
+          </div>
+    
+          <div class="signin-link">
+            Create an account? <a href="/register">Sign Up</a>
+          </div>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
